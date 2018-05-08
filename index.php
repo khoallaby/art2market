@@ -15,3 +15,6 @@ require_once( dirname(__FILE__) . '/resources/controllers/Admin.php');
 
 // Loads the composer autoload - Kint debugging library, commented out for now so dev/user doesn't need to run composer install
 //require_once( dirname(__FILE__) . '/vendor/autoload.php' );
+
+// include single file of kint instead
+require_once( dirname(__FILE__) . '/resources/libraries/kint.php');
