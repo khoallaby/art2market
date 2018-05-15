@@ -12,8 +12,8 @@ class AdminModel extends Admin {
      * Saves the questions on the questions submenu page
      */
     public static function savePage() {
-        if( isset($_POST[ self::$optionName ]) && isset($_POST[ static::$nonce ]) )
-            self::saveAdmin( $_POST[ self::$optionName ] );
+        if( isset($_POST[ static::$optionName ]) && isset($_POST[ static::$nonce ]) )
+            self::saveAdmin( $_POST[ static::$optionName ] );
     }
 
 
@@ -23,8 +23,8 @@ class AdminModel extends Admin {
      */
     public static function saveAdmin( $data = [] ) {
         if( !$data || empty($data) ) {
-            if( isset($_POST[ self::$optionName ]) )
-                $data = $_POST[ self::$optionName ];
+            if( isset($_POST[ static::$optionName ]) )
+                $data = $_POST[ static::$optionName ];
             else
                 return;
         }
@@ -34,7 +34,7 @@ class AdminModel extends Admin {
             return;
 
         $data = self::sanitizeData( $data );
-        $update = update_option( self::$optionName, $data );
+        $update = update_option( static::$optionName, $data );
 
         static::printAdminNotices( $update );
 
