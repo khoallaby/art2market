@@ -1,7 +1,8 @@
 <?php
-use Art2Market\Plugin\Admin;
+use Art2Market\Plugin\Admin,
+    Art2Market\Plugin\AdminModel;
 
-$input = get_option( Admin::$optionName );
+$input = AdminModel::getInput();
 ?>
 
 <div class="wrap">

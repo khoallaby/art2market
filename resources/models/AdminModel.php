@@ -8,6 +8,12 @@ class AdminModel extends Admin {
     }
 
 
+
+    public static function getInput() {
+        return get_option( static::$optionName );
+    }
+
+
     /**
      * Saves the questions on the questions submenu page
      */
